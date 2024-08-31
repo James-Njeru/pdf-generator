@@ -27,7 +27,7 @@ public class PdfService {
         String html = null;
         try {
             html = FreeMarkerTemplateUtils.processTemplateIntoString(
-                    freeMarkerConfigurer.getConfiguration().getTemplate("nodoriginal.ftl"), data);
+                    freeMarkerConfigurer.getConfiguration().getTemplate("invoice.ftl"), data);
         } catch (TemplateException e) {
             throw new RuntimeException(e);
         }

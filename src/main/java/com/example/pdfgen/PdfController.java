@@ -74,4 +74,16 @@ public class PdfController {
                 .header(HttpHeaders.CONTENT_TYPE, "application/pdf")
                 .body(pdf);
     }
+
+    @GetMapping("/generate-invoice")
+    public ResponseEntity<?> generateInvoice() throws IOException, DocumentException {
+        Map<String, Object> model = new HashMap<>();
+
+        Resource pdf = pdfService.generatePdf(model);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"dispute.pdf\"")
+                .header(HttpHeaders.CONTENT_TYPE, "application/pdf")
+                .body(pdf);
+    }
 }
