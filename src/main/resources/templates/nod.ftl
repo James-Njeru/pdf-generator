@@ -34,6 +34,9 @@
 
 <body bgcolor="#f6f8f1">
 <div class="page-number"></div>
+<div>
+    <img src="${qrCode}" class="qr-code" alt="QR Code"/>
+</div>
 <table width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td>
