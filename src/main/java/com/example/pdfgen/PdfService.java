@@ -11,6 +11,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+import org.xhtmlrenderer.pdf.PDFCreationListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class PdfService {
         String html = null;
         try {
             html = FreeMarkerTemplateUtils.processTemplateIntoString(
-                    freeMarkerConfigurer.getConfiguration().getTemplate("invoice.ftl"), data);
+                    freeMarkerConfigurer.getConfiguration().getTemplate("nod.ftl"), data);
         } catch (TemplateException e) {
             throw new RuntimeException(e);
         }
@@ -41,4 +42,5 @@ public class PdfService {
             return new ByteArrayResource(outputStream.toByteArray());
         }
     }
+
 }
